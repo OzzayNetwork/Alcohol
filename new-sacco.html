@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from dashkit.goodthemes.co/orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 01 May 2019 07:12:04 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+
+<!-- Libs CSS -->
+<link rel="stylesheet" href="assets/fonts/feather/feather.min.css">
+<link rel="stylesheet" href="assets/libs/highlight.js/styles/vs2015.css">
+<link rel="stylesheet" href="assets/libs/quill/dist/quill.core.css">
+<link rel="stylesheet" href="assets/libs/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="assets/libs/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
+
+<!-- Theme CSS -->
+
+<link rel="stylesheet" href="assets/css/theme.min.css" id="stylesheetLight">
+<link rel="stylesheet" href="assets/css/theme-dark.min.css" id="stylesheetDark">
+<style>
+body {
+    display: none;
+}
+</style>
+<title>FleetFix | New Bill</title>
+</head>
+
+<body>
+
+<!-- MODALS
+    ================================================== --> 
+
+<!-- Modal: Demo -->
+<div class="modal fade fixed-right" id="modalDemo" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-vertical" role="document">
+    <form class="modal-content" id="demoForm">
+      <div class="modal-body"> 
+        
+        <!-- Close --> 
+        <a class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </a>
+        <div class="text-center"> <img src="assets/img/illustrations/designer-life.svg" alt="..." class="img-fluid mb-3"> </div>
+        <h2 class="text-center mb-2"> Own it Up!</h2>
+        <p class="text-center mb-4"> Set preferences that will be cookied for your live preview demonstration. </p>
+        <hr class="mb-4">
+        <h4 class="mb-1 display-none"> Color Scheme </h4>
+        <p class="small text-muted mb-3 display-none"> Overall light or dark presentation. </p>
+        <div class="btn-group-toggle d-flex mb-4 display-none" data-toggle="buttons">
+          <label class="btn btn-white active col">
+            <input type="radio" name="colorScheme" id="colorSchemeLight" value="light" checked>
+            <i class="fe fe-sun mr-2"></i> Light Mode </label>
+          <label class="btn btn-white col ml-2">
+            <input type="radio" name="colorScheme" id="colorSchemeDark" value="dark">
+            <i class="fe fe-moon mr-2"></i> Dark Mode </label>
+        </div>
+        <h4 class="mb-1"> Navigation Position </h4>
+        <p class="small text-muted mb-3"> How would you like your Navigation menus To look like? </p>
+        <div class="btn-group-toggle d-flex mb-4" data-toggle="buttons">
+          <label class="btn btn-white active col">
+            <input type="radio" name="navPosition" id="navPositionSidenav" value="sidenav" checked>
+            Sidenav </label>
+          <label class="btn btn-white col ml-2">
+            <input type="radio" name="navPosition" id="navPositionTopnav" value="topnav">
+            Topnav </label>
+          <label class="btn btn-white col ml-2">
+            <input type="radio" name="navPosition" id="navPositionCombo" value="combo">
+            Combo </label>
+        </div>
+        <h4 class="mb-1"> Sidebar Color </h4>
+        <p class="small text-muted mb-3"> Don't like the current color scheme? Don't worry, select a color that best excites you. </p>
+        <div class="btn-group-toggle d-flex mb-4" data-toggle="buttons">
+          <label class="btn btn-white active col">
+            <input type="radio" name="sidebarColor" id="sidebarColorDefault" value="default" checked>
+            Default </label>
+          <label class="btn btn-white col ml-2">
+            <input type="radio" name="sidebarColor" id="sidebarColorVibrant" value="vibrant">
+            Vibrant </label>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="submit" class="btn btn-block btn-primary mt-auto"> Preview </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- NAVIGATION
+    ================================================== -->
+
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light" id="sidebar">
+  <div class="container-fluid"> 
+    
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    
+    <!-- Brand --> 
+    <a class="navbar-brand" href="dashboard-alt.html"> <img src="assets/img/logo.svg" class="navbar-brand-img
+            mx-auto" alt="..."> </a> 
+    
+    <!-- User (xs) -->
+    <div class="navbar-user d-md-none"> 
+      
+      <!-- Dropdown -->
+      <div class="dropdown"> 
+        
+        <!-- Toggle --> 
+        <a href="#" id="sidebarIcon" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="avatar avatar-sm avatar-online"> <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="..."> </div>
+        </a> 
+        
+        <!-- Menu -->
+        <div class="dropdown-menu dropdown-menu-right display-none" aria-labelledby="sidebarIcon"> <a href="profile-posts.html" class="dropdown-item display-none">Profile</a> <a href="settings.html" class="dropdown-item display-none">Settings</a>
+          <hr class="dropdown-divider">
+          <a href="sign-in.html" class="dropdown-item">Logout</a> </div>
+      </div>
+    </div>
+    
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="sidebarCollapse"> 
+      
+      <!-- Form -->
+      <form class="mt-4 mb-3 d-md-none">
+        <div class="input-group input-group-rounded input-group-merge">
+          <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+          <div class="input-group-prepend">
+            <div class="input-group-text"> <span class="fe fe-search"></span> </div>
+          </div>
+        </div>
+      </form>
+      
+      <!-- Navigation -->
+      <ul class="navbar-nav text-capitalize">
+        <li class="nav-item"> <a class="nav-link" href="dashboard-alt.html" aria-controls="sidebarPages"> <em class="fe fe-home"></em>Dashboard</a></li>
+		  <li class="nav-item text-capitalize"> <a class="nav-link" href="sacco-register.html" aria-controls="sidebarPages"> <em class="fe fe-truck"></em>saccos</a></li>
+		  <li class="nav-item"> <a href="#sidebarbills" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarbills"> <i class="fe fe-layers"></i>bills</a>
+          <div class="collapse " id="sidebarbills">
+            <ul class="nav nav-sm flex-column">
+			<li class="nav-item"> <a class="nav-link" href="all-bills.html"> all </a> </li>
+              <li class="nav-item"> <a href="pending-bills.html" class="nav-link ">pending</a> </li>
+              <li class="nav-item"> <a href="paid-bills.html" class="nav-link ">paid</a> </li>
+             
+            </ul>
+          </div>
+        </li>        
+        <li class="nav-item"> <a href="#sidebarRiders" class="nav-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarRiders"> <i class="fe fe-trending-up"></i> reports </a>
+          <div class="collapse " id="sidebarRiders">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item"> <a href="reports-finance.html" class="nav-link "> financial reports </a> </li>
+              <li class="nav-item"> <a href="reports-compliance.html" class="nav-link "> compliance reports </a> </li>
+            </ul>
+          </div>
+        </li>
+		  <li class="nav-item"> <a href="#sidebarFleetfix" class="nav-link text-capitalize" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarFleetfix"> <i class="fe fe-sliders"></i> fleetFix manager </a>
+          <div class="collapse " id="sidebarFleetfix">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item"> <a href="user-accounts.html" class="nav-link "> accounts </a> </li>
+              <li class="nav-item"> <a href="charges.html" class="nav-link "> charges </a> </li>
+              <li class="nav-item"> <a href="routes.html" class="nav-link ">routes </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item d-md-none"> <a class="nav-link" href="#sidebarModalActivity" data-toggle="modal"> <span class="fe fe-bell"></span> Notifications </a> </li>
+      </ul>
+      
+      <!-- Divider -->
+      <hr class="navbar-divider my-3">
+      
+      <!-- Push content down -->
+      <div class="mt-auto"></div>
+      
+      <!-- Customize --> 
+      <a href="#modalDemo" class="btn btn-block btn-primary mb-4" data-toggle="modal"> <i class="fe fe-sliders mr-2"></i> Customize </a> 
+      
+      <!-- User (md) -->
+      <div class="navbar-user d-none d-md-flex" id="sidebarUser"> 
+        
+        <!-- Icon --> 
+        <a href="#sidebarModalActivity" class="navbar-user-link d-none" data-toggle="modal"> <span class="icon"> <i class="fe fe-bell"></i> </span> </a> 
+        
+        <!-- Dropup -->
+        <div class="dropup"> 
+          
+          <!-- Toggle --> 
+          <a href="#" id="sidebarIconCopy" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="avatar avatar-sm avatar-online"> <img src="assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="..."> </div>
+          </a> 
+          
+          <!-- Menu -->
+          <div class="dropdown-menu" aria-labelledby="sidebarIconCopy"> <a href="profile-posts.html" class="dropdown-item d-none display-none">Profile</a> <a href="settings.html" class="dropdown-item d-none display-none">Settings</a>
+            <hr class="dropdown-divider d-none">
+            <a href="sign-in.html" class="dropdown-item">Logout</a> </div>
+        </div>
+        
+        <!-- Icon --> 
+        <a href="#sidebarModalSearch" class="navbar-user-link d-none" data-toggle="modal"> <span class="icon"> <i class="fe fe-search"></i> </span> </a> </div>
+    </div>
+    <!-- / .navbar-collapse --> 
+    
+  </div>
+</nav>
+<div class="main-content">
+  <nav class="navbar navbar-expand-md navbar-light d-none d-md-flex" id="topbar">
+    <div class="container-fluid">       
+      <!-- date -->
+      
+       <div class="col-12 d-flex justify-content-between">
+		   <div class="col-auto d-flex flex-row align-content-center">
+		   	<div class="col-auto">
+		   	<div class="county-logo-container">
+		   	<img src="assets/img/logos/ncc.png" class="logo-county" height="50px;">
+		   </div>
+		   </div>
+		   <div class="col-auto">
+		   	<h3 class="text-capitalize p-o m-o mb-1">Nairobi City county</h3>
+			   <p class="text-capitalize m-0 p-0">fleetFix management system</p>
+		   </div>
+		   </div>
+			
+      <!-- User -->
+      <div class="navbar-user col-4 float-right dropright">       
+        
+        <div class="dropdown"> 
+			<span class="mr-3">Hello Mike</span>
+          
+          <!-- Toggle --> 
+          <a href="#" class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="assets/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle"> </a> 
+          
+          <!-- Menu -->
+          <div class="dropdown-menu dropdown-menu-right"> <a href="profile-posts.html" class="dropdown-item display-none">Profile</a> <a href="settings.html" class="dropdown-item display-none">Settings</a>
+            <hr class="dropdown-divider">
+            <a href="sign-in.html" class="dropdown-item">Logout</a> </div>
+        </div>
+      </div>
+		</div>
+    </div>
+  </nav>
+  <!-- MAIN CONTENT ================================================== -->
+  
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12"> 
+        
+        <!-- Header -->
+        <div class="header">
+          <div class="header-body p-0">
+            <div class="row align-items-end">
+              <div class="col"> 
+                
+                <!-- Pretitle -->
+                <h6 class="header-pretitle mt-3"> Overview </h6>
+                
+                <!-- Title -->
+                <h1 class="header-title text-capitalize">add vehicles into the sacco</h1>
+              </div>
+              <div class="row align-items-center text-capitalize">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="card mt-2">
+                  <div class="card-body text-capitalize">
+                    <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="sacco-register.html">All Saccos</a></li>						
+                      <li class="breadcrumb-item active" aria-current="page">Add vehicles</li>
+                    </ol>
+                  </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--				  row--> 
+            <!--				  assignment sammary--> 
+            
+            <!-- / .row --> 
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <h6 class="header-pretitle mt-3"> sacco name </h6>
+                    <h3 class="card-header-title text-capitalize"> select vehicles for the sacco</h3>
+                  </div>
+                </div>
+                <!-- / .row --> 
+              </div>
+              <div class="card-body" data-select2-id="16">
+                <form>
+                  <div class="form-row">
+                    <div class="col-12 col-md-4 mb-3">
+                      <label for="type" class="text-capitalize">plate number</label>
+            <input type="text" class="form-control mb-3 col-12" placeholder="eg KAG 214T"> 
+                    </div>
+                    <div class="col-12 col-md-4 mb-3">
+                      <label for="validationServer01">vehicle category</label>
+                      <select class="form-control text-capitalize">
+                        <option value="volvo">-select vehicle category-</option>
+                        <option value="saab">bus</option>
+                        <option value="mercedes">minibus</option>
+                        <option value="audi">nissan</option>
+                      </select>
+                    </div>
+                    <div class="col-12 col-md-4 mb-3">
+                      <label for="validationServer02" class="text-capitalize">select route</label>
+                      <select class="form-control text-capitalize">
+                        <option value="volvo">- select route -</option>
+                        <option value="saab">route 1</option>
+                        <option value="mercedes">route 1</option>
+                        <option value="audi">route 1</option>
+                      </select>
+                    </div>
+                    
+                  </div>
+					<div class="col-auto p-0">
+                      <button class="btn btn-primary text-capitalize pl-4 pr-4 m-0" type="submit"><i class="fe fe-plus-circle mr-3"></i>add</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tab Content -->
+        <div class="tab-content" id="myTabContent"> 
+          <!-- All Table -->
+          <div class="card tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab" data-toggle="lists" data-lists-values='["orders-order", "orders-product","time-picked", "orders-date","duration", "orders-total", "orders-status", "orders-method"]'>
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col display-none"> 
+                  
+                  <!-- Search -->
+                  <form class="row align-items-center">
+                    <div class="col-auto pr-0"> <span class="fe fe-search text-muted"></span> </div>
+                    <div class="col display-none">
+                      <input type="search" class="form-control form-control-flush search" placeholder="Search">
+                    </div>
+                  </form>
+                </div>
+                <div class="col-12 d-flex justify-content-between">
+                  <!-- Button -->
+                  
+                  <div class="dropdown">
+                    <button class="btn btn-sm btn-white dropdown-toggle" type="button" id="bulkActionDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bulk action</button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bulkActionDropdown"> <a class="dropdown-item" href="#!"><i class="fe fe-printer mr-3"></i>Print</a> <a class="dropdown-item" href="#!"><i class="fe fe-file-text mr-3"></i>Convert To Excell</a> <a class="dropdown-item" href="#!"><i class="fe fe-mail mr-3"></i>Email</a><a class="dropdown-item" href="#!"><i class="fe fe-download mr-3"></i>download</a> <a class="dropdown-item" href="#!"><i class="fe fe-download mr-3"></i>bill Selected items</a> </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / .row --> 
+            </div>
+            <table id="#" class="table table-sm table-nowrap card-tabl">
+              <thead class="orders-table">
+                <tr class="text-capitalize">
+                  <th> <div class="custom-control custom-checkbox table-checkbox">
+                      <input type="checkbox" class="custom-control-input" name="ordersSelect" id="ordersSelectAll">
+                      <label class="custom-control-label" for="ordersSelectAll">&nbsp;</label>
+                    </div>
+                  </th>
+                  <th>Registration Number</th>
+                  <th>Vehicle Type</th>
+                  <th>route</th>                  
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="custom-control custom-checkbox table-checkbox">
+                      <input type="checkbox" class="custom-control-input" name="ordersSelect" id="ordersSelect1">
+                      <label class="custom-control-label" for="ordersSelect1">&nbsp;</label>
+                    </div></td>
+                  <td><a href="#">KBY 4554Y</a></td>
+                  <td>BUS</td>
+                  <td><time>THIKA - CBD</time></td>                  
+                  <td class="text-right"><div class="dropdown text-capitalize text-danger" role="button"><i class="fe fe-trash-2 ml-2"></i>Remove </div></td>
+                </tr>
+                <tr>
+                  <td><div class="custom-control custom-checkbox table-checkbox">
+                      <input type="checkbox" class="custom-control-input" name="ordersSelect" id="ordersSelect1">
+                      <label class="custom-control-label" for="ordersSelect1">&nbsp;</label>
+                    </div></td>
+                  <td><a href="#">KBY 4554Y</a></td>
+                  <td>BUS</td>
+                  <td><time>THIKA - CBD</time></td>                  
+                  <td class="text-right"><div class="dropdown text-capitalize text-danger" role="button"><i class="fe fe-trash-2 ml-2"></i>Remove </div></td>
+                </tr>
+				  <tr>
+                  <td><div class="custom-control custom-checkbox table-checkbox">
+                      <input type="checkbox" class="custom-control-input" name="ordersSelect" id="ordersSelect1">
+                      <label class="custom-control-label" for="ordersSelect1">&nbsp;</label>
+                    </div></td>
+                  <td><a href="#">KBY 4554Y</a></td>
+                  <td>BUS</td>
+                  <td><time>THIKA - CBD</time></td>                  
+                  <td class="text-right"><div class="dropdown text-capitalize text-danger" role="button"><i class="fe fe-trash-2 ml-2"></i>Remove </div></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="text-capitalize">
+                  <th> <div class="custom-control custom-checkbox table-checkbox">
+                      <input type="checkbox" class="custom-control-input" name="ordersSelect" id="ordersSelectAll">
+                      <label class="custom-control-label" for="ordersSelectAll">&nbsp;</label>
+                    </div>
+                  </th>
+                  <th>Registration Number</th>
+                  <th>Vehicle Type</th>
+                  <th>route</th>                  
+                  <th> </th>
+                </tr>
+              </tfoot>
+				
+				
+            </table>
+			  
+			  <div class="col-auto mb-3">
+                      <a href="#" id="#" class="btn btn-primary p-2 text-capitalize pr-3" title="procede to the next step"><i class="fe fe-save mr-3"></i>finish</a>
+                    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / .row --> 
+</div>
+</div>
+<!-- / .main-content --> 
+
+<!-- JAVASCRIPT
+    ================================================== --> 
+<!-- Libs JS --> 
+<script src="assets/libs/jquery/dist/jquery.min.js"></script> 
+<script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+<script src="assets/libs/chart.js/dist/Chart.min.js"></script> 
+<script src="assets/libs/highlightjs/highlight.pack.min.js"></script> 
+<script src="assets/libs/flatpickr/dist/flatpickr.min.js"></script> 
+<script src="assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script> 
+<script src="assets/libs/list.js/dist/list.min.js"></script> 
+<script src="assets/libs/quill/dist/quill.min.js"></script> 
+<script src="assets/libs/dropzone/dist/min/dropzone.min.js"></script> 
+<script src="assets/libs/select2/dist/js/select2.min.js"></script> 
+<script src="assets/libs/chart.js/Chart.extension.min.js"></script> 
+<script src="assets/js/jquery.dataTables.min.js"></script> 
+<script src="assets/js/dataTables.bootstrap4.min.js"></script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> 
+
+<!-- Theme JS --> 
+<script src="assets/js/theme.min.js"></script> 
+<!--		custom date--> 
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('.select2').select2();
+});
+			$(function() {
+
+				var start = moment().subtract(29, 'days');
+				var end = moment();
+
+				function cb(start, end) {
+					$('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+				}
+
+				$('#calender-btn').daterangepicker({
+					startDate: start,
+					endDate: end,
+					ranges: {
+						'Today': [moment(), moment()],
+						'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+						'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+						'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+						'This Month': [moment().startOf('month'), moment().endOf('month')],
+						'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+					}
+				}, cb);
+
+				cb(start, end);
+
+			});
+		</script> 
+<!--		custom date--> 
+<script>
+	
+$(function() {
+$('#myTable').DataTable();
+$(function() {
+	
+	//	table filtering
+//	$('#example thead tr').clone(true).appendTo( '#example thead' );
+	
+	var category;
+	var table=$('#example').DataTable;
+	$(".filter_all").on("click",function(){
+		category="";
+		
+	});
+	$(".filter_renew").on("click",function(){
+		category="unpaid";
+		
+	});
+	$(".filter_transfer").on("click",function(){
+		category="paid";
+		
+	});
+	$(".filter-sacco-reg").on("click",function(){
+		category="paid";
+		
+	});
+	$(".filter_pen").on("click",function(){
+		category="penalty";
+		
+	});
+	$(".filter_veh").on("click",function(){
+		category="vehicle penalty";
+		
+	});
+	$( '.filter_category').on( 'click', function () {
+            if ( table.column(7).search() !== category ) {
+                table
+                    .column(7)
+                    .search( category )
+                    .draw();
+            }	
+		
+        } );
+	$(".all_filter").on("click",function(){
+		$.table.search.pop();
+		
+	});
+	
+var table = $('#example').DataTable({
+"columnDefs": [{
+"visible": true,
+"targets": 2
+}],
+"order": [
+[3, 'asc']
+],
+"displayLength": 10,
+"drawCallback": function(settings) {
+var api = this.api();
+var rows = api.rows({
+page: 'current'
+}).nodes();
+var last = null;
+api.column(3, {
+page: 'current'
+}).data().each(function(group, i) {
+
+});
+}
+});
+// Order by the grouping
+$('#example tbody').on('click', 'tr.group', function() {
+var currentOrder = table.order()[0];
+if (currentOrder[0] === 3 && currentOrder[1] === 'asc') {
+table.order([3, 'desc']).draw();
+} else {
+table.order([3, 'asc']).draw();
+}
+});
+});
+});
+$('#example23').DataTable({
+dom: 'Bfrtip',
+buttons: [
+'copy', 'csv', 'excel', 'pdf', 'print'
+]
+});
+$('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
+
+	
+	
+	 // Setup - add a text input to each footer cell
+    
+ 
+//    var table = $('#example').DataTable( {
+//        orderCellsTop: true,
+//		fixedHeader: true,
+//		 searching: true
+//    } );
+</script>
+</body>
+</html>
